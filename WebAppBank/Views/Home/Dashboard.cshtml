@@ -1,0 +1,63 @@
+﻿@{
+    ViewData["Title"] = "Dashboard";
+}
+
+<style>
+    .dashboard-container {
+        max-width: 600px;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .btn-container {
+        margin-top: 20px;
+    }
+
+    .btn {
+        margin-bottom: 10px;
+        width: 100%;
+    }
+
+    .btn-success {
+        background-color: darkgreen;
+        color: #fff;
+    }
+
+    .btn-primary {
+        background-color: cyan;
+        color: #fff;
+    }
+
+    .btn-info {
+        background-color:deeppink;
+        color: #fff;
+    }
+
+    .btn-danger {
+        background-color: #dc3545;
+        color: #fff;
+    }
+</style>
+
+<div class="dashboard-container">
+    <h2>Welcome to the Dashboard</h2>
+    <div class="btn-container">
+        <button class="btn btn-success" onclick="redirectToAccountActivity('viewBalance')">View Balance</button>
+        <button class="btn btn-primary" onclick="redirectToAccountActivity('transferMoney')">Transfer Money</button>
+        <button class="btn btn-info" onclick="redirectToAccountActivity('transactionHistory')">Transaction History</button>
+    </div>
+    <div class="btn-container">
+        <form asp-action="Login" method="post">
+            <button type="submit" class="btn btn-danger">Logout</button>
+        </form>
+    </div>
+</div>
+
+<script>
+    function redirectToAccountActivity(activity) {
+        alert('Redirecting to ' + activity);
+    }
+</script>
